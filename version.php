@@ -28,3 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->version   = 2024062000; // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2020061516; // Requires this Moodle version.
 $plugin->component = 'tool_amoslink'; // Full name of the plugin (used for diagnostics)
+$plugin->release = '0.1.0';
+$plugin->maturity = MATURITY_STABLE;
+
