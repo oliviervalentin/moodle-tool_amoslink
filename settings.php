@@ -17,8 +17,7 @@
 /**
  * Lang import
  *
- * @package    tool
- * @subpackage amoslink
+ * @package    tool_amoslink
  * @copyright  2024 Olivier VALENTIN
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -27,6 +26,7 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($hassiteconfig) {
     require_once(__DIR__ . '/../../../config.php');
+    require_login();
 
     global $CFG;
 

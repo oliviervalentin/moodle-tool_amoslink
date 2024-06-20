@@ -17,9 +17,8 @@
 /**
  * Strings for component 'tool_langimport', language 'en', branch 'MOODLE_22_STABLE'
  *
- * @package    tool
- * @subpackage langimport
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @package    tool_amoslink
+ * @copyright  2024 Olivier VALENTIN
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

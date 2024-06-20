@@ -17,17 +17,15 @@
 /**
  * Version details.
  *
- * @package    tool
- * @subpackage amoslink
+ * @package    tool_amoslink
  * @copyright  2024 Olivier VALENTIN
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024062000; // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires  = 2020061516; // Requires this Moodle version.
-$plugin->component = 'tool_amoslink'; // Full name of the plugin (used for diagnostics)
+$plugin->version   = 2024062000;
+$plugin->requires  = 2020061516;
+$plugin->component = 'tool_amoslink';
 $plugin->release = '0.1.0';
 $plugin->maturity = MATURITY_STABLE;
-

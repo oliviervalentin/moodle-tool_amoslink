@@ -3,6 +3,8 @@
 This admin tool adds a link in Administration > General > Language category that leads directly
 in AMOS and shows all untranslated strings for non standard plugins.
 
+Note that admin needs an AMOS account to access to translation tool !
+
 ## Installing via uploaded ZIP file ##
 
 1. Log in to your Moodle site as an admin and go to _Site administration >

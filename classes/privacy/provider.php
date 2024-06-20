@@ -24,8 +24,6 @@
 
 namespace tool_amoslink\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem for tool_amoslink implementing null_provider.
  *
