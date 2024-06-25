@@ -24,12 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+global $CFG;
+
 if ($hassiteconfig) {
-    require_once(__DIR__ . '/../../../config.php');
-    require_login();
-
-    global $CFG;
-
     // First, retrieve all installed plugins.
     $pluginman = core_plugin_manager::instance();
     $plugininfo = $pluginman->get_plugins();
@@ -59,4 +56,3 @@ if ($hassiteconfig) {
     // Add admin link.
     $ADMIN->add('language', new admin_externalpage('toolamoslink', get_string('pluginname', 'tool_amoslink'), $url));
 }
-
