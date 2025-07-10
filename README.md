@@ -1,3 +1,5 @@
+[![Moodle Plugin CI](https://github.com/oliviervalentin/moodle-tool_amoslink/actions/workflows/ci.yml/badge.svg)](https://github.com/oliviervalentin/moodle-tool_amoslink/actions/workflows/ci.yml)
+
 # AMOS link tool #
 
 This admin tool adds a link in Administration > General > Language category that leads directly

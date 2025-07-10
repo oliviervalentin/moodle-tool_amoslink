@@ -4,11 +4,11 @@ on: [push, pull_request]
 
 jobs:
   test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-22
 
     services:
       postgres:
-        image: postgres:13
+        image: postgres:14
         env:
           POSTGRES_USER: 'postgres'
           POSTGRES_HOST_AUTH_METHOD: 'trust'
@@ -30,9 +30,47 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.4', '8.0', '8.1']
-        moodle-branch: ['MOODLE_401_STABLE']
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+        moodle-branch: ['MOODLE_401_STABLE', 'MOODLE_402_STABLE', 'MOODLE_403_STABLE', 'MOODLE_404_STABLE', 'MOODLE_405_STABLE', 'MOODLE_500_STABLE']
         database: [pgsql, mariadb]
+        exclude:
+          - moodle-branch: 'MOODLE_401_STABLE'
+            php: '8.2'
+          - moodle-branch: 'MOODLE_401_STABLE'
+            php: '8.3'
+          - moodle-branch: 'MOODLE_401_STABLE'
+            php: '8.4'
+          - moodle-branch: 'MOODLE_402_STABLE'
+            php: '7.4'
+          - moodle-branch: 'MOODLE_402_STABLE'
+            php: '8.3'
+          - moodle-branch: 'MOODLE_402_STABLE'
+            php: '8.4'
+          - moodle-branch: 'MOODLE_403_STABLE'
+            php: '7.4'
+          - moodle-branch: 'MOODLE_403_STABLE'
+            php: '8.3'
+          - moodle-branch: 'MOODLE_403_STABLE'
+            php: '8.4'
+          - moodle-branch: 'MOODLE_404_STABLE'
+            php: '7.4'
+          - moodle-branch: 'MOODLE_404_STABLE'
+            php: '8.0'
+          - moodle-branch: 'MOODLE_404_STABLE'
+            php: '8.4'
+          - moodle-branch: 'MOODLE_405_STABLE'
+            php: '7.4'
+          - moodle-branch: 'MOODLE_405_STABLE'
+            php: '8.0'
+          - moodle-branch: 'MOODLE_405_STABLE'
+            php: '8.4'
+          - moodle-branch: 'MOODLE_500_STABLE'
+            php: '7.4'
+          - moodle-branch: 'MOODLE_500_STABLE'
+            php: '8.0'
+          - moodle-branch: 'MOODLE_500_STABLE'
+            php: '8.1'
+
 
     steps:
       - name: Check out repository code
@@ -69,11 +107,6 @@ jobs:
       - name: PHP Lint
         if: ${{ !cancelled() }}
         run: moodle-plugin-ci phplint
-
-      - name: PHP Copy/Paste Detector
-        continue-on-error: true # This step will show errors but will not fail
-        if: ${{ !cancelled() }}
-        run: moodle-plugin-ci phpcpd
 
       - name: PHP Mess Detector
         continue-on-error: true # This step will show errors but will not fail
